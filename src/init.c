@@ -6,7 +6,7 @@
 /*   By: aalemami <aalemami@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 14:12:28 by aalemami          #+#    #+#             */
-/*   Updated: 2026/01/31 14:12:30 by aalemami         ###   ########.fr       */
+/*   Updated: 2026/01/31 15:56:08 by aalemami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	init_fractal(t_fractal *fractal)
 	fractal->y = 0;
 	fractal->zx = 0.0;
 	fractal->zy = 0.0;
-	// cx and cy are NOT reset here to avoid overwriting command line args
 	if (fractal->name && ft_strncmp(fractal->name, "julia", 6) != 0)
 	{
 		fractal->cx = 0.0;
@@ -26,7 +25,7 @@ void	init_fractal(t_fractal *fractal)
 	}
 	fractal->color = 0xFCBE11;
 	fractal->zoom = INITIAL_ZOOM;
-	fractal->offset_x = -1.85; // Better center for Mandelbrot
+	fractal->offset_x = -1.85;
 	fractal->offset_y = -1.35;
 	fractal->max_iterations = INITIAL_ITERATIONS;
 }

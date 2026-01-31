@@ -6,7 +6,7 @@
 /*   By: aalemami <aalemami@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 14:12:40 by aalemami          #+#    #+#             */
-/*   Updated: 2026/01/31 14:12:41 by aalemami         ###   ########.fr       */
+/*   Updated: 2026/01/31 16:07:56 by aalemami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "libft/inc/libft.h"
 # include "minilibx-linux/mlx.h"
 # include <math.h>
-# include <stdlib.h> // Required for malloc, free, exit
+# include <stdlib.h>
 
 # define SIZE 700
 
@@ -77,7 +77,9 @@ void		put_color_to_pixel(t_fractal *fractal, int x, int y, int colour);
 int			exit_fractal(t_fractal *fractal);
 double		generate_random_c(void);
 void		change_iterations(t_fractal *fractal, int key_code);
-double		ft_atof(char *str);
+
+// utils2.c
+double	ft_atof(char *str);
 
 // init.c
 void		init_fractal(t_fractal *fractal);

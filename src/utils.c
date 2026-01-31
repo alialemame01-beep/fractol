@@ -6,7 +6,7 @@
 /*   By: aalemami <aalemami@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 14:11:54 by aalemami          #+#    #+#             */
-/*   Updated: 2026/01/31 14:11:56 by aalemami         ###   ########.fr       */
+/*   Updated: 2026/01/31 16:05:19 by aalemami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,27 +69,4 @@ void	change_iterations(t_fractal *fractal, int key_code)
 	}
 }
 
-double	ft_atof(char *str)
-{
-	double	res;
-	double	div;
-	int		sign;
 
-	res = 0;
-	div = 1;
-	sign = 1;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == '+' || *str == '-')
-		if (*str++ == '-')
-			sign = -1;
-	while (*str >= '0' && *str <= '9')
-		res = res * 10 + (*str++ - '0');
-	if (*str == '.')
-	{
-		str++;
-		while (*str >= '0' && *str <= '9')
-			res += (*str++ - '0') * (div /= 10);
-	}
-	return (res * sign);
-}
