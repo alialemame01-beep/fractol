@@ -43,6 +43,24 @@ int	exit_fractal(t_fractal *fractal)
 	exit(0);
 }
 
+void	error_exit(t_fractal *fractal)
+{
+	if (fractal)
+	{
+		if (fractal->image && fractal->mlx)
+			mlx_destroy_image(fractal->mlx, fractal->image);
+		if (fractal->window && fractal->mlx)
+			mlx_destroy_window(fractal->mlx, fractal->window);
+		if (fractal->mlx)
+		{
+			mlx_destroy_display(fractal->mlx);
+			free(fractal->mlx);
+		}
+		free(fractal);
+	}
+	exit(1);
+}
+
 double	generate_random_c(void)
 {
 	static int	seeded = 0;

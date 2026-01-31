@@ -28,7 +28,7 @@ int	draw_fractal(t_fractal *fractal, char *name)
 	{
 		ft_printf("Error: Invalid fractal name\n");
 		ft_printf("Available fractals: mandelbrot, julia\n");
-		exit_fractal(fractal);
+		error_exit(fractal);
 	}
 	mlx_put_image_to_window(fractal->mlx, fractal->window, fractal->image, 0,
 		0);
@@ -46,6 +46,8 @@ static int	is_valid_double(char *str)
 	has_dot = 0;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
+	if (str[i] == '.')
+		return (0);
 	while (str[i])
 	{
 		if (str[i] >= '0' && str[i] <= '9')
@@ -97,6 +99,13 @@ int	main(int argc, char **argv)
 
 	if (!check_args(argc, argv))
 		return (1);
+	if (ft_strncmp(argv[1], "mandelbrot", 11) != 0
+		&& ft_strncmp(argv[1], "julia", 6) != 0)
+	{
+		ft_printf("Error: Invalid fractal name\n");
+		ft_printf("Available fractals: mandelbrot, julia\n");
+		return (1);
+	}
 	fractal = malloc(sizeof(t_fractal));
 	if (!fractal)
 		return (1);
