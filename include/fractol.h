@@ -6,7 +6,7 @@
 /*   By: aalemami <aalemami@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 14:12:40 by aalemami          #+#    #+#             */
-/*   Updated: 2026/01/31 16:10:51 by aalemami         ###   ########.fr       */
+/*   Updated: 2026/01/31 16:40:31 by aalemami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ double		generate_random_c(void);
 void		change_iterations(t_fractal *fractal, int key_code);
 
 // utils2.c
-double	ft_atof(char *str);
+double		ft_atof(char *str);
 
 // init.c
 void		init_fractal(t_fractal *fractal);

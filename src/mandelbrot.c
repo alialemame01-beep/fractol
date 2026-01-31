@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "fractol.h"
 
 /**
  * @brief    Calculates the Mandelbrot fractal for one pixel.

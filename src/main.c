@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "fractol.h"
 
 int	draw_fractal(t_fractal *fractal, char *name)
 {
@@ -18,12 +18,10 @@ int	draw_fractal(t_fractal *fractal, char *name)
 		return (1);
 	if (ft_strncmp(name, "mandelbrot", 11) == 0)
 	{
-		fractal->name = "mandel";
 		draw_mandelbrot(fractal);
 	}
 	else if (ft_strncmp(name, "julia", 6) == 0)
 	{
-		fractal->name = "julia";
 		draw_julia(fractal);
 	}
 	else
@@ -104,9 +102,9 @@ int	main(int argc, char **argv)
 		return (1);
 	init_fractal_state(fractal, argc, argv);
 	init_mlx(fractal);
-	mlx_hook(fractal->window, 2, 1L << 0, (int (*)(void))key_hook, fractal);
-	mlx_hook(fractal->window, 4, 1L << 2, (int (*)(void))mouse_hook, fractal);
-	mlx_hook(fractal->window, 17, 0L, (int (*)(void))exit_fractal, fractal);
+	mlx_hook(fractal->window, 2, 1L << 0, key_hook, fractal);
+	mlx_hook(fractal->window, 4, 1L << 2, mouse_hook, fractal);
+	mlx_hook(fractal->window, 17, 0L, exit_fractal, fractal);
 	draw_fractal(fractal, argv[1]);
 	mlx_loop(fractal->mlx);
 	return (0);

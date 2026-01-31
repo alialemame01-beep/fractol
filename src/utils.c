@@ -6,11 +6,11 @@
 /*   By: aalemami <aalemami@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 14:11:54 by aalemami          #+#    #+#             */
-/*   Updated: 2026/01/31 16:05:19 by aalemami         ###   ########.fr       */
+/*   Updated: 2026/01/31 16:40:03 by aalemami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "fractol.h"
 #include <time.h>
 
 void	put_color_to_pixel(t_fractal *fractal, int x, int y, int color)
@@ -68,5 +68,3 @@ void	change_iterations(t_fractal *fractal, int key_code)
 			fractal->max_iterations += ITERATION_STEP;
 	}
 }
-
-
