@@ -6,7 +6,7 @@
 /*   By: aalemami <aalemami@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 14:12:40 by aalemami          #+#    #+#             */
-/*   Updated: 2026/01/31 16:07:56 by aalemami         ###   ########.fr       */
+/*   Updated: 2026/01/31 16:10:51 by aalemami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ typedef struct s_fractal
 	double	cx;
 	double	cy;
 	int		color;
-	double	offset_x;
-	double	offset_y;
+	double	oset_x;
+	double	oset_y;
 	double	zoom;
 	char	*name;
 	int		max_iterations;

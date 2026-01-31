@@ -6,7 +6,7 @@
 /*   By: aalemami <aalemami@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 14:12:00 by aalemami          #+#    #+#             */
-/*   Updated: 2026/01/31 14:19:41 by aalemami         ###   ########.fr       */
+/*   Updated: 2026/01/31 16:10:51 by aalemami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	zoom(t_fractal *fractal, int x, int y, int zoom)
 		new_zoom = fractal->zoom * zoom_level;
 		if (new_zoom > MAX_ZOOM)
 			return ;
-		fractal->offset_x = (x / fractal->zoom + fractal->offset_x) - (x / new_zoom);
-		fractal->offset_y = (y / fractal->zoom + fractal->offset_y) - (y / new_zoom);
+		fractal->oset_x = (x / fractal->zoom + fractal->oset_x) - (x / new_zoom);
+		fractal->oset_y = (y / fractal->zoom + fractal->oset_y) - (y / new_zoom);
 		fractal->zoom = new_zoom;
 	}
 	else if (zoom == -1)
@@ -32,8 +32,8 @@ void	zoom(t_fractal *fractal, int x, int y, int zoom)
 		new_zoom = fractal->zoom / zoom_level;
 		if (new_zoom < MIN_ZOOM)
 			return ;
-		fractal->offset_x = (x / fractal->zoom + fractal->offset_x) - (x / new_zoom);
-		fractal->offset_y = (y / fractal->zoom + fractal->offset_y) - (y / new_zoom);
+		fractal->oset_x = (x / fractal->zoom + fractal->oset_x) - (x / new_zoom);
+		fractal->oset_y = (y / fractal->zoom + fractal->oset_y) - (y / new_zoom);
 		fractal->zoom = new_zoom;
 	}
 }
@@ -49,13 +49,13 @@ int	key_hook(int key_code, t_fractal *fractal)
 	if (key_code == ESC)
 		exit_fractal(fractal);
 	else if (key_code == LEFT)
-		fractal->offset_x -= MOVE_STEP / fractal->zoom;
+		fractal->oset_x -= MOVE_STEP / fractal->zoom;
 	else if (key_code == RIGHT)
-		fractal->offset_x += MOVE_STEP / fractal->zoom;
+		fractal->oset_x += MOVE_STEP / fractal->zoom;
 	else if (key_code == UP)
-		fractal->offset_y -= MOVE_STEP / fractal->zoom;
+		fractal->oset_y -= MOVE_STEP / fractal->zoom;
 	else if (key_code == DOWN)
-		fractal->offset_y += MOVE_STEP / fractal->zoom;
+		fractal->oset_y += MOVE_STEP / fractal->zoom;
 	else if (key_code == R)
 		init_fractal(fractal);
 	else if (key_code == C)

@@ -6,7 +6,7 @@
 /*   By: aalemami <aalemami@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 14:12:28 by aalemami          #+#    #+#             */
-/*   Updated: 2026/01/31 15:56:08 by aalemami         ###   ########.fr       */
+/*   Updated: 2026/01/31 16:10:51 by aalemami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	init_fractal(t_fractal *fractal)
 	}
 	fractal->color = 0xFCBE11;
 	fractal->zoom = INITIAL_ZOOM;
-	fractal->offset_x = -1.85;
-	fractal->offset_y = -1.35;
+	fractal->oset_x = -1.85;
+	fractal->oset_y = -1.35;
 	fractal->max_iterations = INITIAL_ITERATIONS;
 }
 
